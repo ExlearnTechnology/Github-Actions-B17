@@ -1,19 +1,24 @@
 name: Myfirstworkflow
 
-on: workflow_dispatch
+on: push
 
 jobs:
     firstjob:
         runs-on: ubuntu-latest
         steps:
-          - name: Print a message 
-            run: echo "Hello b17 this is my first workflow"
+          - name: putting code on runner
+            run: git clone https://github.com/ExlearnTechnology/Github-Actions-B17.git
 
-          - name: do this calculations
-            run: expr 10 + 20
+          - name: checking the code 
+            run: |
+              cd Github-Actions-B17
+              ls -la
 
-          - name: check os info of runner
-            run: cat /etc/os-release
+          - name: running the script
+            run: |
+                chmod +x new.sh
+                ./new.sh
+            
 
 
 
