@@ -13,11 +13,8 @@ jobs:
             run: |
               cd Github-Actions-B17
               ls -la
-
-          - name: running the script
-            run: |
-                chmod +x new.sh
-                ./new.sh
+              chmod +x new.sh
+              ./new.sh
             
 
 
