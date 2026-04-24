@@ -1,1 +1,0 @@
-echo "hello osme automation script"
