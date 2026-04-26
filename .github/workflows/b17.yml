@@ -23,8 +23,8 @@ jobs:
 
           - name: Build and Push Docker Image
             run: |
-              docker build -t 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:{github.sha} .
-              docker push 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:{github.sha}
+              docker build -t 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:${{ github.sha }} .
+              docker push 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:${{ github.sha }}
 
 
 
