@@ -23,8 +23,24 @@ jobs:
 
           - name: Build and Push Docker Image
             run: |
-              docker build -t 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:${{ github.sha }} .
-              docker push 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:${{ github.sha }}
+              docker build -t 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:latest .
+              docker push 415696284448.dkr.ecr.ap-south-1.amazonaws.com/b17:latest
+
+          - name: Set up kubectl
+            uses: azure/setup-kubectl@v3
+            with:
+              version: 'latest'
+
+          - name: Configure kubectl
+            run: |
+              aws eks update-kubeconfig --region ap-south-1 --name b17
+
+
+
+          - name: Deploy to Kubernetes
+            run: |
+              kubectl apply -f k8s/deploy.yml
+              kubectl apply -f k8s/service.yml
 
 
 
