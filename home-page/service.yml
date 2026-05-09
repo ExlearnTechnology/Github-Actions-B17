@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: home-service
+
+spec:
+  selector:
+    app: home
+
+  ports:
+  - port: 80
+    targetPort: 80
+
+  type: ClusterIP

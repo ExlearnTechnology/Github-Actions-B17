@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: home-html
+
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Home Service</title>
+
+      <style>
+        body {
+          text-align: center;
+          font-family: Arial;
+          margin-top: 100px;
+          background-color: #f2f2f2;
+        }
+
+        button {
+          padding: 15px 30px;
+          margin: 20px;
+          font-size: 20px;
+          border: none;
+          background-color: orange;
+          color: white;
+          cursor: pointer;
+          border-radius: 10px;
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <h1>Welcome to HOME Service</h1>
+
+      <a href="/shop">
+        <button>Shop</button>
+      </a>
+
+      <a href="/cart">
+        <button>Cart</button>
+      </a>
+
+    </body>
+    </html>

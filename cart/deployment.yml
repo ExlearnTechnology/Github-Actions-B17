@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: cart
+
+  template:
+    metadata:
+      labels:
+        app: cart
+
+    spec:
+      containers:
+      - name: cart-container
+        image: nginx
+
+        ports:
+        - containerPort: 80
+
+        volumeMounts:
+        - name: cart-volume
+          mountPath: /usr/share/nginx/html
+
+      volumes:
+      - name: cart-volume
+        configMap:
+          name: cart-html

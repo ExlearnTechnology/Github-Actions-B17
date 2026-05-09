@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cart-html
+
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Cart Service</title>
+
+      <style>
+        body {
+          text-align: center;
+          font-family: Arial;
+          margin-top: 100px;
+          background-color: #d9edf7;
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <h1>Welcome to CART Service</h1>
+
+      <h2>Your Cart Items</h2>
+
+      <a href="/">
+        <button>Go Home</button>
+      </a>
+
+    </body>
+    </html>
