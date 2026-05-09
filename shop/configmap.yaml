@@ -1,33 +1,23 @@
 apiVersion: v1
 kind: ConfigMap
+
 metadata:
   name: shop-html
 
 data:
-  index.html: |
+  shop/index.html: |
     <!DOCTYPE html>
     <html>
     <head>
       <title>Shop Service</title>
-
-      <style>
-        body {
-          text-align: center;
-          font-family: Arial;
-          margin-top: 100px;
-          background-color: #dff0d8;
-        }
-      </style>
     </head>
 
-    <body>
+    <body style="text-align:center; margin-top:100px;">
 
       <h1>Welcome to SHOP Service</h1>
 
-      <h2>Products Page</h2>
-
       <a href="/">
-        <button>Go Home</button>
+        <button>Home</button>
       </a>
 
     </body>
