@@ -1,34 +1,60 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ConfigMap
 
 metadata:
-  name: shop-deployment
+  name: home-html
 
-spec:
-  replicas: 2
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
 
-  selector:
-    matchLabels:
-      app: shop
+    <head>
+      <title>Home Service</title>
 
-  template:
-    metadata:
-      labels:
-        app: shop
+      <style>
+        body {
+          text-align: center;
+          font-family: Arial;
+          margin-top: 100px;
+          background-color: #f2f2f2;
+        }
 
-    spec:
-      containers:
-      - name: shop-container
-        image: nginx
+        button {
+          padding: 15px 30px;
+          margin: 20px;
+          font-size: 20px;
+          border: none;
+          background-color: orange;
+          color: white;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      </style>
+    </head>
 
-        ports:
-        - containerPort: 80
+    <body>
 
-        volumeMounts:
-        - name: shop-volume
-          mountPath: /usr/share/nginx/html
+      <h1>Welcome to HOME Service</h1>
 
-      volumes:
-      - name: shop-volume
-        configMap:
-          name: shop-html
+      <a href="/shop">
+        <button>Shop</button>
+      </a>
+
+      <a href="/cart">
+        <button>Cart</button>
+      </a>
+
+    </body>
+    </html>
+
+  default.conf: |
+    server {
+      listen 80;
+
+      location / {
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files $uri $uri/ /index.html;
+      }
+    }
