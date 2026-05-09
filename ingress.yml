@@ -1,0 +1,51 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: ecommerce-ingress
+
+  annotations:
+    # ALB Type
+    alb.ingress.kubernetes.io/scheme: internet-facing
+
+    # Target Pods Directly
+    alb.ingress.kubernetes.io/target-type: ip
+
+    # Specify Public Subnets
+    alb.ingress.kubernetes.io/subnets: subnet-0058042b61245a3bf,subnet-0a9da875258f53399
+
+  
+
+spec:
+  ingressClassName: alb
+
+  rules:
+  - http:
+      paths:
+
+      # HOME
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: home-service
+            port:
+              number: 80
+
+      # SHOP
+      - path: /shop
+        pathType: Prefix
+        backend:
+          service:
+            name: shop-service
+            port:
+              number: 80
+
+      # CART
+      - path: /cart
+        pathType: Prefix
+        backend:
+          service:
+            name: cart-service
+            port:
+              number: 80
