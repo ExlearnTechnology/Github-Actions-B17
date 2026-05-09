@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 
 metadata:
-  name: cart-html
+  name: shop-html
 
 data:
   index.html: |
@@ -10,7 +10,7 @@ data:
     <html>
 
     <head>
-      <title>Cart Service</title>
+      <title>Shop Service</title>
 
       <style>
         body {
@@ -35,7 +35,7 @@ data:
 
     <body>
 
-      <h1>Welcome to CART Service</h1>
+      <h1>Welcome to SHOP Service</h1>
 
       <a href="/">
         <button>Home</button>
