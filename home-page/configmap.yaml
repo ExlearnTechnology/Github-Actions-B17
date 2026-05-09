@@ -35,11 +35,11 @@ data:
 
       <h1>Welcome to HOME Service</h1>
 
-      <a href="/shop">
+      <a href="/shop/">
         <button>Shop</button>
       </a>
 
-      <a href="/cart">
+      <a href="/cart/">
         <button>Cart</button>
       </a>
 
