@@ -33,7 +33,7 @@ spec:
               number: 80
 
       # SHOP
-      - path: /shop/
+      - path: /shop
         pathType: Prefix
         backend:
           service:
@@ -42,7 +42,7 @@ spec:
               number: 80
 
       # CART
-      - path: /cart/
+      - path: /cart
         pathType: Prefix
         backend:
           service:

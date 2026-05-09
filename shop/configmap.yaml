@@ -2,19 +2,40 @@ apiVersion: v1
 kind: ConfigMap
 
 metadata:
-  name: shop-html
+  name: cart-html
 
 data:
-  shop/index.html: |
+  index.html: |
     <!DOCTYPE html>
     <html>
+
     <head>
-      <title>Shop Service</title>
+      <title>Cart Service</title>
+
+      <style>
+        body {
+          text-align: center;
+          font-family: Arial;
+          margin-top: 100px;
+          background-color: #d9edf7;
+        }
+
+        button {
+          padding: 15px 30px;
+          margin-top: 20px;
+          font-size: 18px;
+          border: none;
+          background-color: blue;
+          color: white;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      </style>
     </head>
 
-    <body style="text-align:center; margin-top:100px;">
+    <body>
 
-      <h1>Welcome to SHOP Service</h1>
+      <h1>Welcome to CART Service</h1>
 
       <a href="/">
         <button>Home</button>

@@ -5,14 +5,35 @@ metadata:
   name: cart-html
 
 data:
-  cart/index.html: |
+  index.html: |
     <!DOCTYPE html>
     <html>
+
     <head>
       <title>Cart Service</title>
+
+      <style>
+        body {
+          text-align: center;
+          font-family: Arial;
+          margin-top: 100px;
+          background-color: #d9edf7;
+        }
+
+        button {
+          padding: 15px 30px;
+          margin-top: 20px;
+          font-size: 18px;
+          border: none;
+          background-color: blue;
+          color: white;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      </style>
     </head>
 
-    <body style="text-align:center; margin-top:100px;">
+    <body>
 
       <h1>Welcome to CART Service</h1>
 
